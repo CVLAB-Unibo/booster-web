@@ -1,0 +1,98 @@
+# WhatATheme
+markdown: kramdown
+
+# URL of the Site
+url: 'https://cvlab-unibo.github.io'
+# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
+baseurl:
+
+# Title of the Site
+title: Open Challenges in Deep Stereo <br> the Booster Dataset
+# Description of the Site
+description: Pierluigi Zama Ramirez*, Fabio Tosi*, Matteo Poggi* <br> Samuele Salti, Stefano Mattoccia, Luigi Di Stefano <br> <i> *Equal Contribution </i> <br> <br> University of Bologna <br> <br> Published at CVPR 2022 <br> <br> We gratefully acknowledge the funding support of Huawei Technologies Oy (Finland). 
+# URL of Image of the Site
+site-image:
+# Keywords of the Site
+site-keywords: Dataset, Stereo, Transparent, non-Lambertian
+# URL for the Image of custom Favicon
+favicon-url:
+
+# URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section
+heroimage: ../images/teaser.svg
+
+# Social Media and Contact
+# If you don't want to use any icon, you can leave them blank.
+email:
+facebook_username:
+twitter_username:
+instagram_username:
+linkedin_username:
+github_username:  pierlui92/booster-web
+youtube_channel_id: 
+reddit_username:
+behance_username:
+dribbble_username:
+spotify_username:
+site_name: "https://www.vision.deis.unibo.it/"
+
+# Google Analytics
+google-analytics:
+
+# Disqus
+disqus-shortname: Booster
+
+# Name of the Author
+author-name: Pierluigi Zama Ramirez
+# URL for the Image of the Author
+author-image:
+# 60 Words About the Author
+author-about: 
+# URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
+author-url:
+
+# SASS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Build settings
+plugins:
+  - jekyll-admin
+  - jekyll-feed
+
+# Permalink
+permalink: "blog/:title"
+
+# Compress
+compress_html:
+  clippings: all
+
+# Defaults
+defaults:
+  -
+    scope:
+      type: 'posts'
+    values:
+      layout: post
+      post-image: ""
+      description: ""
+      tags:
+        - ""
+  -
+    scope:
+      type: 'pages'
+    values:
+      layout: page
+
+# Exclude
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

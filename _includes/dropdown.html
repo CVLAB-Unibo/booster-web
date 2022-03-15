@@ -1,0 +1,10 @@
+<div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">
+        DOWNLOAD
+    </a>
+    <div class="navbar-dropdown has-background-black is-left">
+        {% unless sitepage.url == '/' or sitepage.url == '/404'  or sitepage.url == '/blog' %}
+        <a class="navbar-item has-text-grey-light" href="todo">Dataset</a>
+        {% endunless %}
+    </div>
+</div>

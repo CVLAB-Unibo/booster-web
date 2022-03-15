@@ -1,0 +1,61 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  {% include navbar.html %}
+  {% include showcase.html %}
+  {% include us.html %}
+
+  <!--Footer begins here-->
+  {% include footer.html %}
+</body>
+<script>
+  window.addEventListener("scroll", function (event) {
+    var scroll = this.scrollY;
+    var item = document.getElementsByClassName('navbar-item');
+    /* console.log(scroll); */
+    if (scroll < 565) {
+      item[1].classList.add('is-active');
+      item[2].classList.remove('is-active');
+      item[3].classList.remove('is-active');
+      item[4].classList.remove('is-active');
+      item[5].classList.remove('is-active');
+    }
+    if (scroll > 565 && scroll < 1500) {
+      item[1].classList.remove('is-active');
+      item[2].classList.add('is-active');
+      item[3].classList.remove('is-active');
+      item[4].classList.remove('is-active');
+      item[5].classList.remove('is-active');
+    }
+    if (scroll > 1500 && scroll < 5000) {
+      item[1].classList.remove('is-active');
+      item[2].classList.remove('is-active');
+      item[3].classList.add('is-active');
+      item[4].classList.remove('is-active');
+      item[5].classList.remove('is-active');
+    }
+    if (scroll > 5000 && scroll < 6000) {
+      item[1].classList.remove('is-active');
+      item[2].classList.remove('is-active');
+      item[3].classList.remove('is-active');
+      item[4].classList.add('is-active');
+      item[5].classList.remove('is-active');
+
+    }
+    if (scroll > 6000) {
+      item[1].classList.remove('is-active');
+      item[2].classList.remove('is-active');
+      item[3].classList.remove('is-active');
+      item[4].classList.remove('is-active');
+      item[5].classList.add('is-active');
+    }
+  });
+</script>
+
+</html>
