@@ -1,0 +1,184 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+    {% include navbar.html %}
+
+    <style>
+        tr:nth-child(odd) {
+            border-bottom: 2px solid rgb(99, 99, 99);
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #e2e2e2;
+            text-align: left;
+        }
+        tr:hover {background-color: #D6EEEE;}
+        tr {
+            display: none;
+        }
+        .results{
+            width: 70px;
+            text-align: center;
+        }
+        .center{ 
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    
+    <section class="hero has-text-centered has-background-white">
+        <div class="hero-body">
+            <div class="container">
+                <br>
+                <h1 class="title is-uppercase">
+                   Benchmark
+                </h1>
+                <br>
+                <div class="btn-group" id="setup" data-toggle="buttons">
+                    Setup:
+                    <label class="btn btn-primary active">
+                      <input type="radio" name="setup" id="balanced" checked> Balanced
+                    </label>
+                    <label class="btn btn-primary">
+                      <input type="radio" name="setup" id="unbalanced"> Unbalanced
+                    </label>
+                </div>
+                
+                <div class="btn-group" data-toggle="buttons">
+                    Split:
+                    <label class="btn btn-primary active">
+                      <input type="radio" name="split" id="test" checked> Test
+                    </label>
+                </div>
+
+                <div class="btn-group" data-toggle="buttons">
+                    Occlusion:
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="occ" id="all" checked> All
+                    </label>
+                    <label class="btn btn-primary active">
+                      <input type="radio" name="occ" id="noocc"> No Occ
+                    </label>
+                </div>
+
+                <div class="btn-group" data-toggle="buttons">
+                    Resolution:
+                    <label class="btn btn-primary active">
+                      <input type="radio" name="res" id="full" checked> Full
+                    </label>
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="res" id="quarter"> Quarter
+                      </label>
+                </div>
+
+                <div class="btn-group" data-toggle="buttons">
+                    Class:
+                    <label class="btn btn-primary active">
+                      <input type="radio" name="cls" id="all" checked> All
+                    </label>
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="cls" id="c0"> 0
+                    </label>
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="cls" id="c1"> 1
+                    </label>
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="cls" id="c2"> 2
+                    </label>
+                    <label class="btn btn-primary active">
+                        <input type="radio" name="cls" id="c3"> 3
+                    </label>
+                </div>
+                <button id="load" onclick="load()">Load</button>
+                <br>
+                <br>
+
+                {% include tables/balanced_test_all_full_c0.html %}
+                {% include tables/balanced_test_all_full_c1.html %}
+                {% include tables/balanced_test_all_full_c2.html %}
+                {% include tables/balanced_test_all_full_c3.html %}
+                {% include tables/balanced_test_all_full_all.html %}
+                {% include tables/balanced_test_all_quarter_c0.html %}
+                {% include tables/balanced_test_all_quarter_c1.html %}
+                {% include tables/balanced_test_all_quarter_c2.html %}
+                {% include tables/balanced_test_all_quarter_c3.html %}
+                {% include tables/balanced_test_all_quarter_all.html %}
+                {% include tables/balanced_test_noocc_full_c0.html %}
+                {% include tables/balanced_test_noocc_full_c1.html %}
+                {% include tables/balanced_test_noocc_full_c2.html %}
+                {% include tables/balanced_test_noocc_full_c3.html %}
+                {% include tables/balanced_test_noocc_full_all.html %}
+                {% include tables/balanced_test_noocc_quarter_c0.html %}
+                {% include tables/balanced_test_noocc_quarter_c1.html %}
+                {% include tables/balanced_test_noocc_quarter_c2.html %}
+                {% include tables/balanced_test_noocc_quarter_c3.html %}
+                {% include tables/balanced_test_noocc_quarter_all.html %}
+                {% include tables/unbalanced_test_all_full_c0.html %}
+                {% include tables/unbalanced_test_all_full_c1.html %}
+                {% include tables/unbalanced_test_all_full_c2.html %}
+                {% include tables/unbalanced_test_all_full_c3.html %}
+                {% include tables/unbalanced_test_all_full_all.html %}
+                {% include tables/unbalanced_test_all_quarter_c0.html %}
+                {% include tables/unbalanced_test_all_quarter_c1.html %}
+                {% include tables/unbalanced_test_all_quarter_c2.html %}
+                {% include tables/unbalanced_test_all_quarter_c3.html %}
+                {% include tables/unbalanced_test_all_quarter_all.html %}
+                {% include tables/unbalanced_test_noocc_full_c0.html %}
+                {% include tables/unbalanced_test_noocc_full_c1.html %}
+                {% include tables/unbalanced_test_noocc_full_c2.html %}
+                {% include tables/unbalanced_test_noocc_full_c3.html %}
+                {% include tables/unbalanced_test_noocc_full_all.html %}
+                {% include tables/unbalanced_test_noocc_quarter_c0.html %}
+                {% include tables/unbalanced_test_noocc_quarter_c1.html %}
+                {% include tables/unbalanced_test_noocc_quarter_c2.html %}
+                {% include tables/unbalanced_test_noocc_quarter_c3.html %}
+                {% include tables/unbalanced_test_noocc_quarter_all.html %}
+
+                <script>
+                    var selected_table = "balanced_test_all_full_all";
+                    function load(){
+                        const keys = ["setup", "split", "occ", "res", "cls"];
+
+                        var rows = document.getElementById(selected_table).rows;
+                        for (var i = 0; i < rows.length; i++) {
+                            rows[i].style.display = 'none';
+                        }
+
+                        selected_table = "";
+                        for(var k = 0; k < keys.length; k++){
+                            btn_group = document.getElementsByName(keys[k]);
+                            let x;
+                            for(var i = 0; i < btn_group.length; i++){
+                                if(btn_group[i].checked){
+                                    x = btn_group[i].id;
+                                }
+                            }
+                            selected_table += x;
+                            if(k != keys.length - 1){
+                                selected_table += "_";
+                            }
+                        }                        
+                                                
+                        var rows = document.getElementById(selected_table).rows;
+                        for (var i = 0; i < rows.length; i++) {
+                            rows[i].style.display = 'table-row';
+                        }
+                    }
+                    document.addEventListener('DOMContentLoaded', function () {
+                        load();
+                    })
+                </script>         
+            </div>
+        </div>
+    </section>
+</body>
+
+
+</html>

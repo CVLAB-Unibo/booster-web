@@ -5,7 +5,7 @@
         <div class="navbar-brand">
             <a class="navbar-item"
                 href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">
-                <strong>Open Challenges in Deep Stereo - the Booster Dataset</strong>
+                <strong>BOOSTER DATASET</strong>
             </a>
             <div class="navbar-burger" data-target="navbar-menu">
                 <span></span>
@@ -22,32 +22,13 @@
             <!-- navbar items | right side -->
             <div class="navbar-end">
                 <a class="navbar-item {% if page.layout == 'default' %}is-active{% endif %}"
-                    href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">HOME</a>
-                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#us">US</a>
-                {% include dropdown.html %}
+                    href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">Home</a>
+                <a class="navbar-item" href="http://amsacta.unibo.it/id/eprint/6876">Download</a>
+                <a class="navbar-item" href="benchmark.html">Benchmark</a>
+                <a class="navbar-item" href="">Submit</a>
+                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#us">Us</a>
             </div>
-
+        </div>
         </div>
     </div>
 </nav>
-<!-- Bulma Navbar JS -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        /* Get all "navbar-burger" elements */
-        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        /* Check if there are any navbar burgers */
-        if ($navbarBurgers.length > 0) {
-            /* Add a click event on each of them */
-            $navbarBurgers.forEach(function ($el) {
-                $el.addEventListener('click', function () {
-                    /* Get the target from the "data-target" attribute */
-                    var target = $el.dataset.target;
-                    var $target = document.getElementById(target);
-                    /* Toggle the class on both the "navbar-burger" and the "navbar-menu" */
-                    $el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-                });
-            });
-        }
-    });
-</script>

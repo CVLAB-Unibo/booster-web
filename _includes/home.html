@@ -1,0 +1,126 @@
+<style>
+    model-viewer {
+      width: 1200px;
+      height: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .responsive {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .row_imgs {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    /* Create two equal columns that sits next to each other */
+    .col_imgs {
+    flex: 23%;
+    padding: 0 4px;
+    }
+
+    .col_imgs img {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    vertical-align: middle;
+    }
+
+</style>
+
+<section class="hero has-text-centered has-background-white" id="dataset">
+    <div class="hero-body">
+        <div class="container">
+            <h2 align="centered" class="title">DATASET EXAMPLE</h2>
+            <br>
+            <div class="row_imgs">
+                <div class="col_imgs">
+                    <center> Left (Balanced) </center>
+                    <img src="assets/samples/balanced_ShotGlasses_camera_00_im0.jpg">
+                    <center> Right (Balanced) </center>
+                    <img src="assets/samples/balanced_ShotGlasses_camera_02_im0.jpg">
+                    <center> Material Mask </center>
+                    <img src="assets/samples/balanced_ShotGlasses_mask_cat_col.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center> Disparity Left (Balanced)</center>
+                    <img src="assets/samples/balanced_ShotGlasses_disp_00.jpg">
+                    <center> Disparity Right (Balanced) </center>
+                    <img src="assets/samples/balanced_ShotGlasses_disp_02.jpg">
+                    <center> Occlusion Mask (Balanced) </center>
+                    <img src="assets/samples/balanced_ShotGlasses_mask_00.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center> Left (Unbalanced) </center>
+                    <img src="assets/samples/unbalanced_ShotGlasses_camera_00_im0.jpg">
+                    <center> Right (Unbalanced) </center>
+                    <img src="assets/samples/unbalanced_ShotGlasses_camera_01_im0.jpg">
+                    <center> Disparity Left (Unbalanced) </center>
+                    <img src="assets/samples/unbalanced_ShotGlasses_disp_00.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center> Light Conditions </center>
+                    <img src="assets/samples/balanced_ShotGlasses_camera_00_im0.jpg">
+                    <center> Light Conditions </center>
+                    <img src="assets/samples/balanced_ShotGlasses_camera_00_im1.jpg">
+                    <center> Light Conditions </center>
+                    <img src="assets/samples/balanced_ShotGlasses_camera_00_im2.jpg">
+                </div>
+            </div> 
+        </div> 
+    </div>        
+</section>
+
+<section class="hero has-text-centered " id="pcd">
+    <div class="hero-body">
+      <div class="container">
+       
+        <h2 align="centered" class="title">POINT CLOUDS</h2>
+
+        <div class="row" style="content:'';display:table;clear:both">
+            <div class="column" style="float:left;width:48%">
+                <model-viewer align="centered" id="toggle-model1" class="responsive"  src="assets/Lunch_rgb_spheres.glb" alt="A 3D model of a shishkebab" shadow-intensity="1" camera-controls auto-rotate></model-viewer>
+                <model-viewer align="centered" id="toggle-model3" class="responsive"  src="assets/Bottle_rgb_spheres.glb" alt="A 3D model of a shishkebab" shadow-intensity="1" camera-controls auto-rotate></model-viewer>
+            </div>
+            <div class="column" style="float:left;width:48%">
+                <model-viewer align="centered" id="toggle-model2" class="responsive"  src="assets/Mirror_rgb_spheres.glb" alt="A 3D model of a shishkebab" shadow-intensity="1" camera-controls auto-rotate></model-viewer>
+                <model-viewer align="centered" id="toggle-model4" class="responsive"  src="assets/Cooker1_rgb_spheres.glb" alt="A 3D model of a shishkebab" shadow-intensity="1" camera-controls auto-rotate></model-viewer>
+            </div>
+          </div>
+
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+        <!-- Use it like any other HTML element -->
+
+        <script>
+            const models1 = ['Lunch_rgb_spheres.glb', 'Lunch_mat_spheres.glb'];
+            const models2 = ['Mirror_rgb_spheres.glb', 'Mirror_mat_spheres.glb'];
+            const models3 = ['Bottle_rgb_spheres.glb', 'Bottle_mat_spheres.glb'];
+            const models4 = ['Cooker1_rgb_spheres.glb', 'Cooker1_mat_spheres.glb'];
+
+            const toggleModel1 = document.querySelector('#toggle-model1');
+            const toggleModel2 = document.querySelector('#toggle-model2');
+            const toggleModel3 = document.querySelector('#toggle-model3');
+            const toggleModel4 = document.querySelector('#toggle-model4');
+
+            let j = 0;
+            function update_pcd(){
+                j++;
+                toggleModel1.setAttribute('src', `assets/${models1[j % 2]}`);
+                toggleModel2.setAttribute('src', `assets/${models2[j % 2]}`);
+                toggleModel3.setAttribute('src', `assets/${models3[j % 2]}`);
+                toggleModel4.setAttribute('src', `assets/${models4[j % 2]}`);
+            }
+            setInterval(update_pcd, 60000);
+        </script>
+        
+        <p>
+            RGB and material segmentation of Booster point clouds (downsampled for web visualization).
+        </p>
+    </div>
+</div>
+</section>
