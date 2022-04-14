@@ -74,6 +74,9 @@ layout: compress
                       <input type="radio" name="res" id="full" checked> Full
                     </label>
                     <label class="btn btn-primary active">
+                        <input type="radio" name="res" id="half" checked> Half
+                    </label>
+                    <label class="btn btn-primary active">
                         <input type="radio" name="res" id="quarter"> Quarter
                       </label>
                 </div>
@@ -140,6 +143,26 @@ layout: compress
                 {% include tables/unbalanced_test_noocc_quarter_c2.html %}
                 {% include tables/unbalanced_test_noocc_quarter_c3.html %}
                 {% include tables/unbalanced_test_noocc_quarter_all.html %}
+                {% include tables/balanced_test_all_half_c0.html %}
+                {% include tables/balanced_test_all_half_c1.html %}
+                {% include tables/balanced_test_all_half_c2.html %}
+                {% include tables/balanced_test_all_half_c3.html %}
+                {% include tables/balanced_test_all_half_all.html %}
+                {% include tables/balanced_test_noocc_half_c0.html %}
+                {% include tables/balanced_test_noocc_half_c1.html %}
+                {% include tables/balanced_test_noocc_half_c2.html %}
+                {% include tables/balanced_test_noocc_half_c3.html %}
+                {% include tables/balanced_test_noocc_half_all.html %}
+                {% include tables/unbalanced_test_all_half_c0.html %}
+                {% include tables/unbalanced_test_all_half_c1.html %}
+                {% include tables/unbalanced_test_all_half_c2.html %}
+                {% include tables/unbalanced_test_all_half_c3.html %}
+                {% include tables/unbalanced_test_all_half_all.html %}
+                {% include tables/unbalanced_test_noocc_half_c0.html %}
+                {% include tables/unbalanced_test_noocc_half_c1.html %}
+                {% include tables/unbalanced_test_noocc_half_c2.html %}
+                {% include tables/unbalanced_test_noocc_half_c3.html %}
+                {% include tables/unbalanced_test_noocc_half_all.html %}
 
                 <script>
                     var selected_table = "balanced_test_all_full_all";
