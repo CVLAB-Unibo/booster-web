@@ -7,13 +7,13 @@ url: 'https://cvlab-unibo.github.io'
 baseurl:
 
 # Title of the Site
-title: Open Challenges in Deep Stereo <br> the Booster Dataset
+title: Booster Dataset
 # Description of the Site
-description: Pierluigi Zama Ramirez*, Fabio Tosi*, Matteo Poggi* <br> Samuele Salti, Stefano Mattoccia, Luigi Di Stefano <br> <i> *Equal Contribution </i> <br> <br> University of Bologna <br> <br> Published at CVPR 2022 <br> <br> We gratefully acknowledge the funding support of Huawei Technologies Oy (Finland). <br> We thank Andrea Pumilia for helping collecting and cleaning the data.
+description:  A Benchmark for Depth from Images of Specular and Transparent Surfaces
 # URL of Image of the Site
 site-image:
 # Keywords of the Site
-site-keywords: Dataset, Stereo, Transparent, non-Lambertian
+site-keywords: Dataset, Depth, Monocular, Stereo, Transparent, Specular, non-Lambertian
 # URL for the Image of custom Favicon
 favicon-url:
 
