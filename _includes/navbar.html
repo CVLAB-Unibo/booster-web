@@ -23,11 +23,12 @@
             <div class="navbar-end">
                 <a class="navbar-item {% if page.layout == 'default' %}is-active{% endif %}"
                     href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">Home</a>
-                <a class="navbar-item" href="http://amsacta.unibo.it/id/eprint/6876">Download</a>
+                <!-- <a class="navbar-item" href="http://amsacta.unibo.it/id/eprint/6876">Download</a> -->
                 <a class="navbar-item" href="benchmark.html">Benchmark</a>
                 <a class="navbar-item" href="submit.html">Submit</a>
                 <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#us">Us</a>
                 <a class="navbar-item" href="ntire.html">NTIRE 2023</a>
+                {% include dropdown.html %}
             </div>
         </div>
         </div>
