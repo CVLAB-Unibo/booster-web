@@ -102,7 +102,7 @@
           <br>
           <br>
 
-          <h2><b>DEV KIT [<a href="https://1drv.ms/u/s!AgV49D1Z6rmGgZJG3NYjfMRcJpLiFw?e=Hl3i80">Download</a>]</b></h2>
+          <h2><b>DEV KIT [<a href="https://1drv.ms/u/s!AgV49D1Z6rmGgZJG3NYjfMRcJpLiFw?e=Hl3i80">DOWNLOAD</a>]</b></h2>
           <br>
           We provide some useful scripts to read and visualize Booster data.
           <br>
@@ -117,14 +117,34 @@
           <br>
           <br>
 
-          <h2><b> EVALUATION METRICS [COMING SOON] </b></h2>
+          <h2><b>EVALUATION METRICS</b></h2>
           <br>
-          Details about the evaluation metrics will be available soon.
+          STEREO
+          <br>
+          We take inspiration from Middlebury 2014 and compute the percentage of pixels having disparity errors larger than a threshold τ (badτ). 
+          We compute bad-2, bad-4, bad-6, and bad-8 error rates, given the very high resolution featured by our dataset. 
+          Finally, we also measure the Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+          All the metrics introduced so far are computed on any valid pixel (All), on pixels belonging to Transparent or Mirror surfaces (Class ToM), or on Other type of materials (Class Other).
+          For any metrics the lower the better. All results are reported using the left image as reference.
+          To rank submissions, we use only the bad2 averaged on pixels belonging to ToM surfaces. 
+          Other metrics might be used to declare the final winner of the competition.
+          
+          
+          <br>
+          <br>
+          MONO
+          <br>
+          <i>IMPORTANT: We evaluate predictions in the <b>depth domain</b>, e.g., closer objects have smaller values.
+          As monocular networks estimate depth up to a scale factor, we first compute a shift and scale to match predictions and ground truth ranges.</i>
+          <br>
+          Then, we compute the absolute error relative to the ground value (ABS Rel.), and the percentage of pixels having the maximum between the prediction/ground-truth and ground-truth/prediction ratios lower than a threshold (δi, with i being 1.05, 1.15, and 1.25). We also estimate the mean absolute error (MAE), and Root Mean Squared Error (RMSE). 
+          All the metrics introduced so far are computed on any valid pixel (All), on pixels belonging to Transparent or Mirror surfaces (Class ToM), or on Other type of materials (Class Other). MAE, RMSE, and ABS Rel. are lower the better. δi instead is higher the better.
+          To rank submissions, we use only the δ1.05 averaged on pixels belonging to ToM surfaces. Other metrics might be used to declare the final winner of the competition.  
           <br>
           <br>
           
 
-          <h2><b> SUBMISSION - PREDICTIONS FORMAT [TO BE UPDATED] </b></h2>
+          <h2><b> SUBMISSION - PREDICTIONS FORMAT </b></h2>
           <br>
           STEREO
           <br>
