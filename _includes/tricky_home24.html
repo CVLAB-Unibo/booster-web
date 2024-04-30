@@ -1,0 +1,251 @@
+<style>
+  .title {
+    font-size: 3rem;
+  }
+  @media screen and (max-width:600px) {
+    .title {
+      font-size: 2.3rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+  @media screen and (max-width:600px) {
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  #tricky {
+      background: rgb(0, 0, 0);
+      background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+      background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+
+      &::before {
+          filter: blur(0.15rem);
+          background-image: url("assets/tricky_bg.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          left: 0px;
+          position: absolute;
+          opacity: 0.25;
+          content: "";
+      }
+  }
+</style>
+
+<section class="hero is-fullheight has-text-centered" id="tricky">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-white is-uppercase has-text-weight-bold">
+        Depth from Images of Specular and Transparent Surfaces 
+      </h1>
+      <br>
+      <h3 class="subtitle has-text-white-bis is-uppercase has-text-weight-medium is-marginless">
+        TRICKY 2024 Challenge - ECCV 2024
+      </h3>
+    </div>
+  </div>
+</section>
+
+<section class="hero" id="paper">
+    <div class="hero-body">
+        <div class="container">
+          <!-- <br>
+          <h1 class="title has-text-centered">TRICKY 2024: Depth from Images of Specular and Transparent Surfaces</h1> -->
+          <br>  
+          We are delighted to inform you that the Booster dataset will be employed in the Depth from Images of Specular and Transparent Surfaces Challenge as a part of the <a href="https://sites.google.com/view/eccv24-tricky-workshop/">TRICKY 2024 workshop</a> in conjunction with ECCV 2024!
+          <br>
+          <br>
+  
+          <h1 class="subtitle has-text-centered">CHALLENGES DESCRIPTION</h1>
+          This challenge aims at fostering the community towards developing next-generation <b>monocular</b> depth networks capable of reasoning at a higher level, and thus yield accurate, 3D reconstructions for challenging objects, yet of common use.
+          <br>
+          <br>
+          <center>
+          <img style="display: block;margin-left: auto;margin-right: auto;width:62%" src="assets/tricky_challenge.png"></a>
+          </center>
+
+          The challenges will be divided into two phases:
+          <ol>
+            <li>
+                <b>Development:</b> 
+                During this period, the participants will have to construct a model. 
+                The model can be trained using the Booster training split and any additional data. 
+                The approach can be evaluated on the official validation set of each track.
+            </li>
+            <li>    
+                <b>Test:</b>
+                During this period, the participants can submit the predictions of their model on the official test set. 
+                The depth maps will be evaluated by the organizers with the quantitative metrics.
+            </li>
+          </ol>
+          <br>
+          <br>
+  
+  
+          <h1 class="subtitle has-text-centered">DATASETS</h1>
+
+          <h2><b>TRAINING DATA [<a href="https://1drv.ms/u/s!AgV49D1Z6rmGgZBWFkYLh4zaE_WssA?e=I5u6iZ">DOWNLOAD</a>]</b></h2>
+          <br>
+          The training set is composed of 38 different indoor scenes, containing transparent or reflective objects. 
+          Each scene was acquired with several illumination conditions, for a total of 228 training images at 4112x3008 resolution. 
+          For images belonging to the training split, we release high-resolution stereo images, material segmentation, left and right disparity ground-truth, occlusion mask, and calibration parameters.
+          <br>
+          <br>
+          <b>Notes on training data:</b>
+          <ul>
+          <li> We do not restrict submitted methods from using additional training data. If it is used, it is necessary to indicate the source and amount.</li>
+          <li> We do not restrict submitted methods from using pretrained networks. If it is used, it is necessary to provide details.</li>
+          </ul>
+          <br>
+          
+          <h2><b>VALIDATION DATA[<a href="https://1drv.ms/u/s!AgV49D1Z6rmGgaU4mv6pIIctWwGsXg?e=JBVFhS">DOWNLOAD</a>] </b></h2>
+          <br>
+          The validation set is composed of 6 different indoor scenes, containing transparent or reflective objects. 
+          To assess method robustness, each scene is validated on five different illumination conditions, for a total of 30 validation images at 1028x752 resolution.
+          For images belonging to the validation split, only monocular rgb images, and the calibration parameters are released.
+          <br>
+          <br>
+
+          <h2><b>TEST DATA</b></h2>
+          <br>
+          To rank the submitted models, we test them on a separate test set. 
+          Also for the case of the test set, only rgb images and the calibration parameters are released. 
+          The participants are required to apply their models to the released images and submit their  results to the server. 
+          It should be noted that the images in the test set cannot be used for training.
+          <br>
+          <br>
+
+          <h2><b>DEV KIT [<a href="https://1drv.ms/u/s!AgV49D1Z6rmGgZJG3NYjfMRcJpLiFw?e=Hl3i80">DOWNLOAD</a>]</b></h2>
+          <br>
+          We provide some useful scripts to read and visualize Booster training data.
+          <br>
+          <br>
+          
+          <h1 class="subtitle has-text-centered">SUBMISSION AND EVALUATION</h1>
+          
+          <h2><b> EVALUATION SERVER [<a href="https://codalab.lisn.upsaclay.fr/competitions/18935">CODALAB SERVER</a>] </b></h2>
+          <br>
+          We use CodaLab servers for online submission in the development and test phases, testing the results on the validation set and test set respectively.
+          After the test phase, the final results and the source codes (both training and test) need to be submitted via emails (boosterbenchmark@gmail.com).
+          <br>
+          <br>
+
+          <h2><b>EVALUATION METRICS</b></h2>
+          <br>
+          <i>IMPORTANT: We evaluate predictions in the <b>depth domain</b>, e.g., closer objects have smaller values.
+          As monocular networks estimate depth up to a scale factor, we first compute a shift and scale to match predictions and ground truth ranges.</i>
+          <br>
+          Then, we compute the absolute error relative to the ground value (ABS Rel.), and the percentage of pixels having the maximum between the prediction/ground-truth and ground-truth/prediction ratios lower than a threshold (δi, with i being 1.05, 1.15, and 1.25). We also estimate the mean absolute error (MAE), and Root Mean Squared Error (RMSE). 
+          All the metrics introduced so far are computed on any valid pixel (All), on pixels belonging to Transparent or Mirror surfaces (Class ToM), or on Other type of materials (Class Other). MAE, RMSE, and ABS Rel. are lower the better. δi instead is higher the better.
+          To rank submissions, we use only the δ1.05 averaged on pixels belonging to ToM surfaces. Other metrics might be used to declare the final winner of the competition.  
+          <br>
+          <br>
+          
+
+          <h2><b> SUBMISSION - PREDICTIONS FORMAT </b></h2>
+          <br>
+          The npy should contain 32bits depth values for the 1028x752 images, matching its resolution.
+          <i>Note</i>: We evaluate depth maps up to a scale and shift factors.
+          <br>
+          <br>
+            
+
+          <h2><b> SUBMISSION - DEVELOPMENT PHASE</b></h2>
+          <br>   
+          During the development phase, the participants submit their results on the validation set to get feedback from the CodaLab server. 
+          <br>
+          The validation set should only be used for evaluation and analysis purposes but NOT for training. 
+          <br>
+          The submitted zip files have a structure similar to this: $scene/$img_basepath.npy. E.g., Mirror3/0000.npy. Please do not include any root folder when creating the zip file.
+         
+          An example of submissions on the validation set can be found [<a href="https://1drv.ms/u/s!AgV49D1Z6rmGgaU6OqYauiaJSY4D8g?e=aGWKuq"> HERE </a>].
+          <br>
+          <br>
+
+          <h2><b> SUBMISSION - TEST PHASE</b></h2>
+          <br>
+          During the test phase, the participants submit their results on the test set on the CodaLab server.
+          <br>
+          The test results will not be visible to other participants during this phase.
+          <br>
+          The test set CANNOT be used for training.
+          <br>
+          The submitted zip files have a structure similar to this: $scene/$img_basepath.npy. E.g., Mirror3/0000.npy. Please do not include any root folder when creating the zip file.
+          <br>
+          <br>
+
+
+          <h2><b> FINAL SUBMISSION</b></h2>
+          <br>
+          After the test phase, the participants will submit a zip file (containing fact sheet, source code, and final results) to the official submission account (boosterbenchmark@gmail.com) by email. 
+          <br>
+          The final submission should be made by the following rules: 
+          <br>
+          The submitted results must be from the same method that generated the last submission to the CodaLab. 
+          We will check the consistency. Otherwise, the submission is invalid. 
+          <br>
+          Both the testing source code (or executable) and the model weights must be submitted.
+          We will run the test code to reproduce the results.
+          Reproducibility is a necessary condition.
+          Training code doesn't necessarily have to be included.
+          The code and the model might be posted on the TRICKY 2024 website.
+          <br>
+          Factsheet describing the method must be submitted.
+          The factsheet format is provided <a href="here: https://it.overleaf.com/read/mjxdpdtrdjcs#1b7e4c">here</a>.
+          Participants must submit a compiled pdf file and the tex source of the factsheet.
+          Participants must provide enough method details and include an overview method figure. 
+          This helps writing the challenge summary report. 
+          <br>
+          <br>
+          EMAIL FORMAT
+          <br>
+          Please use the following format to submit your final results, fact sheet, code, model (with trained parameters). 
+
+<pre>
+to: boosterbenchmark@gmail.com;
+cc: your_team_members
+title: [TRICKY 2024: Depth from Images of Specular and Transparent Surfaces] - [Team_name]
+body should include:
+1) team name
+2) team leader's name, affiliation, and email address
+3) team members' names, affiliations, and email addresses
+4) user name on the TRICKY 2024 CodaLab leaderboard (if any)
+5) executable/source code attached or download links.
+6) fact sheet attached (template available here: https://it.overleaf.com/read/hmskzfgfzzph#e8fee3)
+7) download link to the results
+</pre>
+<br>
+<br>
+          <h1 class="subtitle has-text-centered">IMPORTANT CHALLENGES DATES</h1>
+          <ul>
+            <li>2024-05-21: Release of training and validation data;</li>
+            <li>2024-05-01: Validation server online;</li>
+            <li>2024-06-16: Final test data release, validation server closed;</li>
+            <li>2024-06-30: Test result submission deadline;</li>
+            <li>2024-07-01: Fact sheet / code / model submission deadline;</li>
+            <li>2024-07-07: Final leaderboard release to the participants;</li> 
+          </ul>
+          <br>
+          <br>
+
+          <h1 class="subtitle has-text-centered">NEWS AND UPDATES</h1>
+          <ul>
+            <li>2024-05-01: Training and validation data have been released.</li>
+            <li>2024-04: Workshop proposal has been accepted.</li>
+          </ul>  
+          <br>
+          <br>  
+
+      </div>
+    </div>
+</section>
